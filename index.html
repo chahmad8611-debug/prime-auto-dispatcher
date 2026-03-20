@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prime Auto Dispatcher - Professional Dispatching Services</title>
+  <title>Prime Auto Dispatch - Auto Transport Broker Services</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Modern styling for dispatcher website */
+    /* Modern styling for auto transport broker website */
     * {
       margin: 0;
       padding: 0;
@@ -27,7 +27,7 @@
 
     /* Header */
     header {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
       color: white;
       padding: 60px 0;
       text-align: center;
@@ -66,7 +66,7 @@
     }
 
     nav a:hover {
-      background: #3498db;
+      background: #e67e22;
     }
 
     /* Sections */
@@ -88,7 +88,7 @@
     /* Cards */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       margin-top: 30px;
     }
@@ -106,10 +106,22 @@
       transform: translateY(-5px);
     }
 
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
     .card p {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #2c3e50;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .card h3 {
+      color: #e67e22;
+      margin-bottom: 10px;
     }
 
     /* Dashboard Inputs */
@@ -121,7 +133,7 @@
       justify-content: center;
     }
 
-    .dashboard-inputs input {
+    .dashboard-inputs input, .dashboard-inputs select {
       flex: 1;
       min-width: 200px;
       padding: 12px;
@@ -132,7 +144,7 @@
 
     .dashboard-inputs button {
       padding: 12px 30px;
-      background: #3498db;
+      background: #e67e22;
       color: white;
       border: none;
       border-radius: 5px;
@@ -142,7 +154,7 @@
     }
 
     .dashboard-inputs button:hover {
-      background: #2980b9;
+      background: #d35400;
     }
 
     /* Loads List */
@@ -163,6 +175,28 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    .load-item .status {
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    .status-pending {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .status-in-transit {
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    .status-delivered {
+      background: #d4edda;
+      color: #155724;
+    }
+
     .load-item button {
       background: #e74c3c;
       color: white;
@@ -176,27 +210,17 @@
       background: #c0392b;
     }
 
-    /* Team Images */
-    .staff-img, .truck-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
     /* Footer */
     footer {
       background: #2c3e50;
       color: white;
       text-align: center;
       padding: 30px 0;
-      margin-top: 0;
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
       background-size: cover;
       background-position: center;
       color: white;
@@ -218,7 +242,7 @@
     .cta-button {
       display: inline-block;
       padding: 15px 40px;
-      background: #3498db;
+      background: #e67e22;
       color: white;
       text-decoration: none;
       border-radius: 5px;
@@ -227,7 +251,35 @@
     }
 
     .cta-button:hover {
-      background: #2980b9;
+      background: #d35400;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #e67e22;
+    }
+
+    .vehicle-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
     @media (max-width: 768px) {
@@ -250,8 +302,8 @@
 
 <header>
   <div class="container">
-    <h1>🚚 Prime Auto Dispatcher</h1>
-    <p>Smart Dispatching. Faster Deliveries. Reliable Service.</p>
+    <h1>🚛 Prime Auto Dispatch</h1>
+    <p>Your Trusted Auto Transport Broker - Nationwide Vehicle Shipping</p>
   </div>
 </header>
 
@@ -259,8 +311,9 @@
   <div class="container">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#team">Our Team</a>
+    <a href="#vehicles">Vehicles We Ship</a>
+    <a href="#dashboard">Shipment Tracker</a>
+    <a href="#quote">Get Quote</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -268,15 +321,34 @@
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
-    <h2>Your Trusted Dispatching Partner</h2>
-    <p>Professional dispatching services for owner operators and fleet owners</p>
-    <a href="#dashboard" class="cta-button">Get Started</a>
+    <h2>Safe & Reliable Auto Transport</h2>
+    <p>Professional vehicle shipping services across all 50 states</p>
+    <a href="#quote" class="cta-button">Get Free Quote</a>
   </div>
 </section>
 
 <section id="home" class="container">
-  <h2>About Us</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto;">Prime Auto Dispatcher is a professional logistics company providing smart dispatching solutions to streamline deliveries and improve efficiency. We connect drivers with the best loads and ensure smooth operations from pickup to delivery.</p>
+  <h2>About Prime Auto Dispatch</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto;">Prime Auto Dispatch is a leading auto transport brokerage connecting customers with trusted carriers nationwide. We specialize in safe, reliable, and affordable vehicle transportation for individuals, dealerships, and businesses.</p>
+  
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-number">500+</div>
+      <p>Vehicles Shipped Monthly</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">50</div>
+      <p>States Covered</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">98%</div>
+      <p>On-Time Delivery</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">24/7</div>
+      <p>Customer Support</p>
+    </div>
+  </div>
 </section>
 
 <section id="services">
@@ -284,58 +356,89 @@
     <h2>Our Services</h2>
     <div class="cards">
       <div class="card">
-        <p>🚛 <strong>Open & Enclosed Trailer</strong></p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Expert dispatching for all trailer types</p>
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Open Transport">
+        <h3>Open Transport</h3>
+        <p>Most affordable option for standard vehicle shipping. Safe and reliable for all car types.</p>
       </div>
       <div class="card">
-        <p>📍 <strong>Real-Time Tracking</strong></p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Monitor your fleet 24/7</p>
+        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Enclosed Transport">
+        <h3>Enclosed Transport</h3>
+        <p>Premium protection for luxury, classic, and exotic vehicles. Maximum security.</p>
       </div>
       <div class="card">
-        <p>📋 <strong>Order Management</strong></p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Efficient load planning and scheduling</p>
+        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Door to Door">
+        <h3>Door to Door</h3>
+        <p>Convenient pickup and delivery right at your location. No terminals required.</p>
       </div>
       <div class="card">
-        <p>👨‍✈️ <strong>Driver Management</strong></p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Optimized driver assignments</p>
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Expedited Shipping">
+        <h3>Expedited Shipping</h3>
+        <p>Fast delivery for time-sensitive shipments. Rush service available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vehicles">
+  <div class="container">
+    <h2>Vehicles We Ship</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cars">
+        <h3>Cars & SUVs</h3>
+        <p>Standard automobiles, sedans, SUVs, and crossovers</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556189250-72ba954cfc2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Trucks">
+        <h3>Trucks</h3>
+        <p>Pickup trucks, heavy-duty trucks, and commercial vehicles</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1580274455191-1c62238fa333?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Cars">
+        <h3>Luxury & Exotic</h3>
+        <p>High-end vehicles with enclosed transport protection</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Motorcycles">
+        <h3>Motorcycles</h3>
+        <p>Specialized transport for bikes and motorcycles</p>
       </div>
     </div>
   </div>
 </section>
 
 <section id="dashboard" class="container">
-  <h2>Dispatch Dashboard</h2>
+  <h2>Shipment Tracker</h2>
   <div class="dashboard-inputs">
-    <input id="pickup" placeholder="Pickup Location">
-    <input id="delivery" placeholder="Delivery Location">
-    <input id="driver" placeholder="Driver Name">
-    <button onclick="addLoad()">Add Load</button>
+    <input id="pickup" placeholder="Pickup City, State">
+    <input id="delivery" placeholder="Delivery City, State">
+    <input id="vehicle" placeholder="Vehicle Make & Model">
+    <select id="status">
+      <option value="Pending">Pending</option>
+      <option value="In Transit">In Transit</option>
+      <option value="Delivered">Delivered</option>
+    </select>
+    <button onclick="addShipment()">Add Shipment</button>
   </div>
-  <div id="loads" class="loads">
-    <p style="text-align: center; color: #7f8c8d;">No active loads. Add a load to get started!</p>
+  <div id="shipments" class="loads">
+    <p style="text-align: center; color: #7f8c8d;">No active shipments. Add a shipment to track!</p>
   </div>
 </section>
 
-<section id="team">
+<section id="quote">
   <div class="container">
-    <h2>Our Team</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dispatcher Manager" class="staff-img">
-        <p><strong>Jason Walker</strong></p>
-        <p>Dispatcher Manager</p>
-        <p style="font-size: 0.85rem; margin-top: 10px;">10+ years in logistics</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Truck Fleet" class="truck-img">
-        <p><strong>Modern Fleet</strong></p>
-        <p>Auto Dispatching Solutions</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1570125909232-263b9b6a2b3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dispatch Center" class="staff-img">
-        <p><strong>24/7 Dispatch Center</strong></p>
-        <p>Always ready to serve</p>
-      </div>
+    <h2>Get Instant Quote</h2>
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+      <input type="text" id="quotePickup" placeholder="Pickup ZIP Code" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
+      <input type="text" id="quoteDelivery" placeholder="Delivery ZIP Code" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
+      <select id="vehicleType" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
+        <option>Car / Sedan</option>
+        <option>SUV / Truck</option>
+        <option>Luxury Vehicle</option>
+        <option>Motorcycle</option>
+      </select>
+      <button onclick="getQuote()" style="width: 100%; padding: 12px; background: #e67e22; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem;">Get Quote</button>
+      <p id="quoteResult" style="margin-top: 20px; text-align: center; font-weight: bold;"></p>
     </div>
   </div>
 </section>
@@ -343,76 +446,107 @@
 <section id="contact" class="container">
   <h2>Contact Us</h2>
   <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-    <p style="margin: 10px 0;">📧 <strong>Email:</strong> info@primeautodispatcher.com</p>
-    <p style="margin: 10px 0;">📞 <strong>Phone:</strong> +92-XXX-XXXXXXX</p>
-    <p style="margin: 10px 0;">🕒 <strong>Hours:</strong> Monday - Friday, 8:00 AM - 8:00 PM</p>
-    <p style="margin: 10px 0;">📍 <strong>Address:</strong> 123 Logistics Avenue, Karachi, Pakistan</p>
+    <p style="margin: 10px 0;">📧 <strong>Email:</strong> dispatch@primeautodispatch.com</p>
+    <p style="margin: 10px 0;">📞 <strong>Phone:</strong> +1-800-555-AUTO</p>
+    <p style="margin: 10px 0;">🕒 <strong>Hours:</strong> 24/7 - We're always here to help!</p>
+    <p style="margin: 10px 0;">📍 <strong>Address:</strong> 123 Transport Way, Chicago, IL 60601</p>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>© 2026 Prime Auto Dispatcher. All rights reserved. | Professional Dispatching Services</p>
+    <p>© 2026 Prime Auto Dispatch. All rights reserved. | Licensed & Insured Auto Transport Broker | MC# 123456</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
 <script>
-  // Load loads from localStorage
-  function loadLoads() {
-    const loads = JSON.parse(localStorage.getItem("loads") || "[]");
-    const loadsDiv = document.getElementById("loads");
+  // Load shipments from localStorage
+  function loadShipments() {
+    const shipments = JSON.parse(localStorage.getItem("shipments") || "[]");
+    const shipmentsDiv = document.getElementById("shipments");
     
-    if(loads.length === 0) {
-      loadsDiv.innerHTML = '<p style="text-align: center; color: #7f8c8d;">No active loads. Add a load to get started!</p>';
+    if(shipments.length === 0) {
+      shipmentsDiv.innerHTML = '<p style="text-align: center; color: #7f8c8d;">No active shipments. Add a shipment to track!</p>';
       return;
     }
     
-    loadsDiv.innerHTML = loads.map((load, index) => `
-      <div class="load-item">
-        <div>
-          <strong>Pickup:</strong> ${load.pickup}<br>
-          <strong>Delivery:</strong> ${load.delivery}<br>
-          <strong>Driver:</strong> ${load.driver}
+    shipmentsDiv.innerHTML = shipments.map((shipment, index) => {
+      let statusClass = "";
+      if(shipment.status === "Pending") statusClass = "status-pending";
+      else if(shipment.status === "In Transit") statusClass = "status-in-transit";
+      else statusClass = "status-delivered";
+      
+      return `
+        <div class="load-item">
+          <div>
+            <strong>Pickup:</strong> ${shipment.pickup}<br>
+            <strong>Delivery:</strong> ${shipment.delivery}<br>
+            <strong>Vehicle:</strong> ${shipment.vehicle}<br>
+            <span class="status ${statusClass}">${shipment.status}</span>
+          </div>
+          <button onclick="deleteShipment(${index})">Remove</button>
         </div>
-        <button onclick="deleteLoad(${index})">Complete</button>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
   
-  // Add new load
-  function addLoad() {
+  // Add new shipment
+  function addShipment() {
     const pickup = document.getElementById("pickup").value;
     const delivery = document.getElementById("delivery").value;
-    const driver = document.getElementById("driver").value;
+    const vehicle = document.getElementById("vehicle").value;
+    const status = document.getElementById("status").value;
     
-    if(!pickup || !delivery || !driver) {
+    if(!pickup || !delivery || !vehicle) {
       alert("Please fill all fields");
       return;
     }
     
-    const loads = JSON.parse(localStorage.getItem("loads") || "[]");
-    loads.push({ pickup, delivery, driver });
-    localStorage.setItem("loads", JSON.stringify(loads));
+    const shipments = JSON.parse(localStorage.getItem("shipments") || "[]");
+    shipments.push({ pickup, delivery, vehicle, status });
+    localStorage.setItem("shipments", JSON.stringify(shipments));
     
     // Clear inputs
     document.getElementById("pickup").value = "";
     document.getElementById("delivery").value = "";
-    document.getElementById("driver").value = "";
+    document.getElementById("vehicle").value = "";
     
-    loadLoads();
+    loadShipments();
   }
   
-  // Delete/Complete load
-  function deleteLoad(index) {
-    const loads = JSON.parse(localStorage.getItem("loads") || "[]");
-    loads.splice(index, 1);
-    localStorage.setItem("loads", JSON.stringify(loads));
-    loadLoads();
+  // Delete shipment
+  function deleteShipment(index) {
+    const shipments = JSON.parse(localStorage.getItem("shipments") || "[]");
+    shipments.splice(index, 1);
+    localStorage.setItem("shipments", JSON.stringify(shipments));
+    loadShipments();
+  }
+  
+  // Get quote
+  function getQuote() {
+    const pickupZip = document.getElementById("quotePickup").value;
+    const deliveryZip = document.getElementById("quoteDelivery").value;
+    const vehicleType = document.getElementById("vehicleType").value;
+    
+    if(!pickupZip || !deliveryZip) {
+      alert("Please enter both ZIP codes");
+      return;
+    }
+    
+    // Simple quote calculation
+    const distance = Math.abs(pickupZip - deliveryZip) || 500;
+    let basePrice = 500;
+    if(vehicleType === "SUV / Truck") basePrice = 650;
+    if(vehicleType === "Luxury Vehicle") basePrice = 850;
+    if(vehicleType === "Motorcycle") basePrice = 400;
+    
+    const estimatedPrice = basePrice + (distance * 0.5);
+    
+    document.getElementById("quoteResult").innerHTML = `Estimated Quote: $${Math.round(estimatedPrice)}<br><small>Call for exact pricing!</small>`;
   }
   
   // Load on page start
-  loadLoads();
+  loadShipments();
 </script>
 </body>
 </html>
