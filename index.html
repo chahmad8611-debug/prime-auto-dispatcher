@@ -3,54 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prime Auto Dispatcher</title>
+  <title>Prime Auto Dispatcher - Professional Dispatching Services</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Modal login styles */
-    #loginModal {
-      position: fixed;
+    /* Modern styling for dispatcher website */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      background: #2c3e50;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
+      z-index: 100;
+    }
+
+    nav .container {
       display: flex;
       justify-content: center;
-      align-items: center;
-      z-index: 999;
+      flex-wrap: wrap;
     }
-    #loginModalContent {
-      background: #2c3e50;
-      padding: 40px 20px;
-      border-radius: 10px;
+
+    nav a {
       color: white;
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    #loginModalContent input {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: none;
-    }
-    #loginModalContent button {
-      padding: 10px 20px;
-      background: #3498db;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      cursor: pointer;
+      text-decoration: none;
+      padding: 15px 25px;
+      display: inline-block;
       transition: background 0.3s;
     }
-    #loginModalContent button:hover {
+
+    nav a:hover {
+      background: #3498db;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 0;
+    }
+
+    section:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+
+    /* Dashboard Inputs */
+    .dashboard-inputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+
+    .dashboard-inputs input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .dashboard-inputs button {
+      padding: 12px 30px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .dashboard-inputs button:hover {
       background: #2980b9;
     }
-    #loginError {
-      color: #ff6666;
-      margin-top: 10px;
+
+    /* Loads List */
+    .loads {
+      margin-top: 20px;
+    }
+
+    .load-item {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .load-item button {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .load-item button:hover {
+      background: #c0392b;
+    }
+
+    /* Team Images */
+    .staff-img, .truck-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .hero h2 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #2980b9;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      nav a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -59,7 +251,7 @@
 <header>
   <div class="container">
     <h1>🚚 Prime Auto Dispatcher</h1>
-    <p>Smart Dispatching. Faster Deliveries.</p>
+    <p>Smart Dispatching. Faster Deliveries. Reliable Service.</p>
   </div>
 </header>
 
@@ -68,35 +260,46 @@
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#dashboard">Dashboard</a>
+    <a href="#team">Our Team</a>
     <a href="#contact">Contact</a>
-    <button onclick="logout()" style="margin-left:20px; padding:5px 10px; border:none; border-radius:5px; background:#e74c3c; color:white; cursor:pointer;">Logout</button>
   </div>
 </nav>
 
-<!-- Modal Login -->
-<div id="loginModal">
-  <div id="loginModalContent">
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <br>
-    <button onclick="login()">Login</button>
-    <p id="loginError"></p>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h2>Your Trusted Dispatching Partner</h2>
+    <p>Professional dispatching services for owner operators and fleet owners</p>
+    <a href="#dashboard" class="cta-button">Get Started</a>
   </div>
-</div>
+</section>
 
 <section id="home" class="container">
   <h2>About Us</h2>
-  <p>Prime Auto Dispatcher is a professional logistics company providing smart dispatching solutions to streamline deliveries and improve efficiency.</p>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto;">Prime Auto Dispatcher is a professional logistics company providing smart dispatching solutions to streamline deliveries and improve efficiency. We connect drivers with the best loads and ensure smooth operations from pickup to delivery.</p>
 </section>
 
-<section id="services" class="container">
-  <h2>Services</h2>
-  <div class="cards">
-    <div class="card"><p>Open and Enclosed Trailer</p></div>
-    <div class="card"><p>Real-Time Tracking</p></div>
-    <div class="card"><p>Order Management</p></div>
-    <div class="card"><p>Driver Management</p></div>
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <p>🚛 <strong>Open & Enclosed Trailer</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Expert dispatching for all trailer types</p>
+      </div>
+      <div class="card">
+        <p>📍 <strong>Real-Time Tracking</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Monitor your fleet 24/7</p>
+      </div>
+      <div class="card">
+        <p>📋 <strong>Order Management</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Efficient load planning and scheduling</p>
+      </div>
+      <div class="card">
+        <p>👨‍✈️ <strong>Driver Management</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Optimized driver assignments</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -108,62 +311,108 @@
     <input id="driver" placeholder="Driver Name">
     <button onclick="addLoad()">Add Load</button>
   </div>
-  <div id="loads" class="loads"></div>
+  <div id="loads" class="loads">
+    <p style="text-align: center; color: #7f8c8d;">No active loads. Add a load to get started!</p>
+  </div>
 </section>
 
-<section id="contact" class="container">
-  <h2>Contact</h2>
-  <section id="team" class="container">
+<section id="team">
+  <div class="container">
     <h2>Our Team</h2>
     <div class="cards">
       <div class="card">
-        <img src="images/staff1.jpg" alt="Staff 1" class="staff-img">
-        <p><b>Jason Walker</b></p>
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dispatcher Manager" class="staff-img">
+        <p><strong>Jason Walker</strong></p>
         <p>Dispatcher Manager</p>
+        <p style="font-size: 0.85rem; margin-top: 10px;">10+ years in logistics</p>
       </div>
       <div class="card">
-        <img src="New folder/truck3.jpg.jpg" alt="Truck" class="truck-img">
-        <p>Auto Dispatching</p>
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Truck Fleet" class="truck-img">
+        <p><strong>Modern Fleet</strong></p>
+        <p>Auto Dispatching Solutions</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1570125909232-263b9b6a2b3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dispatch Center" class="staff-img">
+        <p><strong>24/7 Dispatch Center</strong></p>
+        <p>Always ready to serve</p>
       </div>
     </div>
-    <p>Email: info@primeautodispatcher.com</p>
-    <p>Phone: +92-XXX-XXXXXXX</p>
-  </section>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2>Contact Us</h2>
+  <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+    <p style="margin: 10px 0;">📧 <strong>Email:</strong> info@primeautodispatcher.com</p>
+    <p style="margin: 10px 0;">📞 <strong>Phone:</strong> +92-XXX-XXXXXXX</p>
+    <p style="margin: 10px 0;">🕒 <strong>Hours:</strong> Monday - Friday, 8:00 AM - 8:00 PM</p>
+    <p style="margin: 10px 0;">📍 <strong>Address:</strong> 123 Logistics Avenue, Karachi, Pakistan</p>
+  </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>© 2026 Prime Auto Dispatcher</p>
+    <p>© 2026 Prime Auto Dispatcher. All rights reserved. | Professional Dispatching Services</p>
   </div>
 </footer>
 
 <script src="script.js"></script>
 <script>
-  // Automatically show modal if not logged in
-  if(localStorage.getItem("loggedIn") !== "true") {
-    document.getElementById("loginModal").style.display = "flex";
-  } else {
-    document.getElementById("loginModal").style.display = "none";
-  }
-
-  function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const errorEl = document.getElementById("loginError");
-
-    if(username === "admin" && password === "1234") {
-      localStorage.setItem("loggedIn", "true");
-      document.getElementById("loginModal").style.display = "none";
-      errorEl.innerText = "";
-    } else {
-      errorEl.innerText = "Wrong username or password";
+  // Load loads from localStorage
+  function loadLoads() {
+    const loads = JSON.parse(localStorage.getItem("loads") || "[]");
+    const loadsDiv = document.getElementById("loads");
+    
+    if(loads.length === 0) {
+      loadsDiv.innerHTML = '<p style="text-align: center; color: #7f8c8d;">No active loads. Add a load to get started!</p>';
+      return;
     }
+    
+    loadsDiv.innerHTML = loads.map((load, index) => `
+      <div class="load-item">
+        <div>
+          <strong>Pickup:</strong> ${load.pickup}<br>
+          <strong>Delivery:</strong> ${load.delivery}<br>
+          <strong>Driver:</strong> ${load.driver}
+        </div>
+        <button onclick="deleteLoad(${index})">Complete</button>
+      </div>
+    `).join('');
   }
-
-  function logout() {
-    localStorage.removeItem("loggedIn");
-    document.getElementById("loginModal").style.display = "flex";
+  
+  // Add new load
+  function addLoad() {
+    const pickup = document.getElementById("pickup").value;
+    const delivery = document.getElementById("delivery").value;
+    const driver = document.getElementById("driver").value;
+    
+    if(!pickup || !delivery || !driver) {
+      alert("Please fill all fields");
+      return;
+    }
+    
+    const loads = JSON.parse(localStorage.getItem("loads") || "[]");
+    loads.push({ pickup, delivery, driver });
+    localStorage.setItem("loads", JSON.stringify(loads));
+    
+    // Clear inputs
+    document.getElementById("pickup").value = "";
+    document.getElementById("delivery").value = "";
+    document.getElementById("driver").value = "";
+    
+    loadLoads();
   }
+  
+  // Delete/Complete load
+  function deleteLoad(index) {
+    const loads = JSON.parse(localStorage.getItem("loads") || "[]");
+    loads.splice(index, 1);
+    localStorage.setItem("loads", JSON.stringify(loads));
+    loadLoads();
+  }
+  
+  // Load on page start
+  loadLoads();
 </script>
 </body>
 </html>
