@@ -1,0 +1,192 @@
+/* style.css */
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  transition: transform 0.5s ease;
+}
+header h1:hover {
+  transform: scale(1.05);
+}
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+/* Navigation */
+nav {
+  background: #2c3e50;
+}
+nav .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px 0;
+  transition: color 0.3s, transform 0.3s;
+}
+nav a:hover,
+nav a:focus {
+  color: #3498db;
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Sections */
+section {
+  padding: 40px 0;
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  flex: 1 1 200px;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform, opacity;
+}
+.card:hover,
+.card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.card button:hover,
+.card button:focus {
+  background: #2980b9;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Staggered card animation */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
+
+/* Dashboard Inputs */
+.dashboard-inputs {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+.dashboard-inputs input,
+.dashboard-inputs button {
+  margin: 10px 0;
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Footer */
+footer {
+  background: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Images */
+.staff-img,
+.truck-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform, box-shadow;
+}
+.staff-img { height: 200px; }
+.truck-img { height: 140px; }
+.staff-img:hover,
+.truck-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: column;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  header h1 { font-size: 2rem; }
+  section h2 { font-size: 1.5rem; }
+  .card { min-width: 90%; }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

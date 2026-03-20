@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Auto Dispatcher</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Modal login styles */
+    #loginModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    #loginModalContent {
+      background: #2c3e50;
+      padding: 40px 20px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    #loginModalContent input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+    #loginModalContent button {
+      padding: 10px 20px;
+      background: #3498db;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #loginModalContent button:hover {
+      background: #2980b9;
+    }
+    #loginError {
+      color: #ff6666;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>🚚 Prime Auto Dispatcher</h1>
+    <p>Smart Dispatching. Faster Deliveries.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#contact">Contact</a>
+    <button onclick="logout()" style="margin-left:20px; padding:5px 10px; border:none; border-radius:5px; background:#e74c3c; color:white; cursor:pointer;">Logout</button>
+  </div>
+</nav>
+
+<!-- Modal Login -->
+<div id="loginModal">
+  <div id="loginModalContent">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <br>
+    <button onclick="login()">Login</button>
+    <p id="loginError"></p>
+  </div>
+</div>
+
+<section id="home" class="container">
+  <h2>About Us</h2>
+  <p>Prime Auto Dispatcher is a professional logistics company providing smart dispatching solutions to streamline deliveries and improve efficiency.</p>
+</section>
+
+<section id="services" class="container">
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card"><p>Open and Enclosed Trailer</p></div>
+    <div class="card"><p>Real-Time Tracking</p></div>
+    <div class="card"><p>Order Management</p></div>
+    <div class="card"><p>Driver Management</p></div>
+  </div>
+</section>
+
+<section id="dashboard" class="container">
+  <h2>Dispatch Dashboard</h2>
+  <div class="dashboard-inputs">
+    <input id="pickup" placeholder="Pickup Location">
+    <input id="delivery" placeholder="Delivery Location">
+    <input id="driver" placeholder="Driver Name">
+    <button onclick="addLoad()">Add Load</button>
+  </div>
+  <div id="loads" class="loads"></div>
+</section>
+
+<section id="contact" class="container">
+  <h2>Contact</h2>
+  <section id="team" class="container">
+    <h2>Our Team</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/staff1.jpg" alt="Staff 1" class="staff-img">
+        <p><b>Jason Walker</b></p>
+        <p>Dispatcher Manager</p>
+      </div>
+      <div class="card">
+        <img src="New folder/truck3.jpg.jpg" alt="Truck" class="truck-img">
+        <p>Auto Dispatching</p>
+      </div>
+    </div>
+    <p>Email: info@primeautodispatcher.com</p>
+    <p>Phone: +92-XXX-XXXXXXX</p>
+  </section>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Prime Auto Dispatcher</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Automatically show modal if not logged in
+  if(localStorage.getItem("loggedIn") !== "true") {
+    document.getElementById("loginModal").style.display = "flex";
+  } else {
+    document.getElementById("loginModal").style.display = "none";
+  }
+
+  function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const errorEl = document.getElementById("loginError");
+
+    if(username === "admin" && password === "1234") {
+      localStorage.setItem("loggedIn", "true");
+      document.getElementById("loginModal").style.display = "none";
+      errorEl.innerText = "";
+    } else {
+      errorEl.innerText = "Wrong username or password";
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    document.getElementById("loginModal").style.display = "flex";
+  }
+</script>
+</body>
+</html>
